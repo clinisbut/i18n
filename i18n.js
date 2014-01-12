@@ -73,9 +73,12 @@
 	};
 
 
-	window.__ = Translator.__;
-	if( typeof define ==='function' && define.amd ){
+	if( typeof module==='object' && module && typeof module.exports==='object' ){
 		module.exports = Translator.__;
+	}
+	else
+	{
+		window.__ = Translator.__;
 	}
 
 })( window );
