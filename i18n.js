@@ -72,8 +72,7 @@
 
 	};
 
-
-	if( typeof module==='object' && module && typeof module.exports==='object' ){
+	if( typeof module==='object' && typeof module.exports==='object' ){
 		module.exports = Translator.__;
 	}
 	else
