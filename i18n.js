@@ -19,7 +19,17 @@
 *
 *	Include it before/after this script.
 */
-(function( window, undefined ) {
+(function (root, factory) {
+    if (typeof exports === 'object') {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like enviroments that support module.exports,
+        // like Node.
+        module.exports = factory();
+    } else {
+        // Browser globals
+        root.i18n = factory();
+    }
+}(this, function () {
 
 	var i18n = null,		// collection of strings
 	Translator = {};
@@ -72,12 +82,6 @@
 
 	};
 
-	if( typeof module==='object' && typeof module.exports==='object' ){
-		module.exports = Translator.__;
-	}
-	else
-	{
-		window.__ = Translator.__;
-	}
+	return Translator.__;
 
-})( window );
+}));
