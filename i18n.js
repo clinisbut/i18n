@@ -53,10 +53,6 @@
 	load_entries = function(){
 		if( i18n===null ){
 			i18n = {language:null,entries:{}};
-
-			if( typeof window.i18n!=='undefined' ){
-				i18n = window.i18n;
-			}
 		}
 	},
 
